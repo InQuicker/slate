@@ -11,6 +11,9 @@ toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
 
 includes:
+  - appointment_types
+  - insurance_plans
+  - locations
   - schedules
   - errors
 
@@ -32,4 +35,3 @@ InQuicker expects for the API key to be included in all API requests to the serv
 <aside class="notice">
 You must replace <code>this-is-your-api-key</code> with your personal API key.
 </aside>
-
