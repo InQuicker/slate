@@ -96,7 +96,7 @@ let max = api.insurance_plans.get(2);
 }
 ```
 
-This endpoint retrieves a specific insurance plan. This call is useful for getting certain attributes associated with a insurance plan (for example, if a provider only sees patients younger than 18, or the service associated with the insurance plan).
+This endpoint retrieves a specific insurance plan.
 
 ### HTTP Request
 

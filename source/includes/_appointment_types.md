@@ -17,7 +17,7 @@ api.appointment_types.get()
 ```
 
 ```shell
-curl "http://example.com/api/v3/{hostname}/appointment_types"
+curl "http://example.com/api/v3/my-host.inquicker.com/appointment_types"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -54,6 +54,16 @@ This endpoint retrieves all appointment types for a given Partner.
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all appointment types for that subdomain.
+filter | false | nil | See [Filter parameters](#filter-parameters).
+
+### Filter Parameters
+
+The filter query parameter takes a JSON object with the following possible keys:
+
+key | Default | Description
+--------- | ------- | -----------
+context | nil | The Schedule Context to limit results from. Can be either "Patient", "Discharge", or "Internal"
+service | nil | The name of the Service to limit results from, for example, "Primary Care".
 
 ## Get a Specific Appointment Type
 
@@ -61,18 +71,18 @@ hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain
 require 'inquicker'
 
 api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.appointment_types.get(2)
+api.appointment_types.get('checkup')
 ```
 
 ```python
 import inquicker
 
 api = inquicker.authorize('this-is-your-api-key')
-api.appointment_types.get(2)
+api.appointment_types.get('checkup')
 ```
 
 ```shell
-curl "http://example.com/api/v3/{hostname}/appointment_types/{appointment_type_id}"
+curl "http://example.com/api/v3/my-host.inquicker.com/appointment_types/checkup"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -96,7 +106,7 @@ let max = api.appointment_types.get('checkup');
 }
 ```
 
-This endpoint retrieves a specific appointment type. This call is useful for getting certain attributes associated with a appointment type (for example, if a provider only sees patients younger than 18, or the service associated with the appointment type).
+This endpoint retrieves a specific appointment type. The priority of an appointment type determines which appointment type is selected by default for new visits and provider links, with 1 being the highest priority, and 10 being the lowest.
 
 ### HTTP Request
 

@@ -17,7 +17,7 @@ api.locations.get()
 ```
 
 ```shell
-curl "http://example.com/api/v3/{hostname}/locations"
+curl "http://example.com/api/v3/my-host.inquicker.com/locations"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -68,18 +68,18 @@ hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain
 require 'inquicker'
 
 api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.locations.get(2)
+api.locations.get('feestport')
 ```
 
 ```python
 import inquicker
 
 api = inquicker.authorize('this-is-your-api-key')
-api.locations.get(2)
+api.locations.get('feestport')
 ```
 
 ```shell
-curl "http://example.com/api/v3/{hostname}/locations/{location_id}"
+curl "http://example.com/api/v3/my-host.inquicker.com/locations/feestport"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -87,7 +87,7 @@ curl "http://example.com/api/v3/{hostname}/locations/{location_id}"
 const inquicker = require('inquicker');
 
 let api = inquicker.authorize('this-is-your-api-key');
-let max = api.locations.get('north-dewaynechester');
+let max = api.locations.get('feestport');
 ```
 
 > The above command returns JSON structured like this:
@@ -110,7 +110,7 @@ let max = api.locations.get('north-dewaynechester');
 }
 ```
 
-This endpoint retrieves a specific location. This call is useful for getting certain attributes associated with a location (for example, if a provider only sees patients younger than 18, or the service associated with the location).
+This endpoint retrieves a specific location.
 
 ### HTTP Request
 
