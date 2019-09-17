@@ -14,6 +14,7 @@ includes:
   - appointment_types
   - insurance_plans
   - locations
+  - providers
   - schedules
   - errors
 
