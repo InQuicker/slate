@@ -1,31 +1,8 @@
-# Locations
-
-## Get All Locations
-
-```ruby
-require 'inquicker'
-
-api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.locations.get
-```
-
-```python
-import inquicker
-
-api = inquicker.authorize('this-is-your-api-key')
-api.locations.get()
-```
+## Locations
 
 ```shell
-curl "http://example.com/api/v3/my-host.inquicker.com/locations"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations"
   -H "Authorization: this-is-your-api-key"
-```
-
-```javascript
-const inquicker = require('inquicker');
-
-let api = inquicker.authorize('this-is-your-api-key');
-let locations = api.locations.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -50,44 +27,17 @@ let locations = api.locations.get();
 ]
 ```
 
-This endpoint retrieves all locations for a given Partner.
+### GET /locations
 
-### HTTP Request
-
-`GET http://example.com/api/v3/{hostname}/locations`
-
-### Query Parameters
+Retrieve all locations for a given Partner.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all locations for that subdomain.
 
-## Get a Specific Location
-
-```ruby
-require 'inquicker'
-
-api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.locations.get('feestport')
-```
-
-```python
-import inquicker
-
-api = inquicker.authorize('this-is-your-api-key')
-api.locations.get('feestport')
-```
-
 ```shell
-curl "http://example.com/api/v3/my-host.inquicker.com/locations/feestport"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport"
   -H "Authorization: this-is-your-api-key"
-```
-
-```javascript
-const inquicker = require('inquicker');
-
-let api = inquicker.authorize('this-is-your-api-key');
-let max = api.locations.get('feestport');
 ```
 
 > The above command returns JSON structured like this:
@@ -110,13 +60,10 @@ let max = api.locations.get('feestport');
 }
 ```
 
-This endpoint retrieves a specific location.
+### GET /locations/{location_id}
 
-### HTTP Request
+Retrieve a specific location.
 
-`GET http://example.com/api/v3/{hostname}/locations/{location_id}`
-
-### URL Parameters
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------

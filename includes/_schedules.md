@@ -17,7 +17,7 @@ api.schedules.get()
 ```
 
 ```shell
-curl "http://example.com/api/v3/{hostname}/schedules"
+curl "http://example.com/api/v3/winter-health.inquicker.com/schedules"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -51,7 +51,7 @@ This endpoint retrieves all schedules for a given Partner.
 
 ### HTTP Request
 
-`GET http://example.com/api/v3/{hostname}/schedules`
+`GET http://example.com/api/v3/winter-health.inquicker.com/schedules`
 
 ### Query Parameters
 
@@ -76,7 +76,7 @@ api.schedules.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/v3/{hostname}/schedules/{schedule_id}"
+curl "http://example.com/api/v3/winter-health.inquicker.com/schedules/{schedule_id}"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -110,7 +110,7 @@ This endpoint retrieves a specific schedule. This call is useful for getting cer
 
 ### HTTP Request
 
-`GET http://example.com/api/v3/{hostname}/schedules/{schedule_id}`
+`GET http://example.com/api/v3/winter-health.inquicker.com/schedules/{schedule_id}`
 
 ### URL Parameters
 

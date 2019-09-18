@@ -1,31 +1,8 @@
-# Schedules
-
-## Get All Schedules
-
-```ruby
-require 'inquicker'
-
-api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.schedules.get
-```
-
-```python
-import inquicker
-
-api = inquicker.authorize('this-is-your-api-key')
-api.schedules.get()
-```
+## Schedules
 
 ```shell
-curl "http://example.com/api/v3/my-host.inquicker.com/schedules"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules"
   -H "Authorization: this-is-your-api-key"
-```
-
-```javascript
-const inquicker = require('inquicker');
-
-let api = inquicker.authorize('this-is-your-api-key');
-let schedules = api.schedules.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -47,20 +24,13 @@ let schedules = api.schedules.get();
 }
 ```
 
-This endpoint retrieves all schedules for a given Partner.
+### GET /schedules
 
-### HTTP Request
-
-`GET http://example.com/api/v3/{hostname}/schedules`
-
-### Query Parameters
+Retrieve all schedules for a given Partner.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all schedules for that subdomain.
-filter | false | nil | See [Filter parameters](#filter-parameters).
-
-### Filter Parameters
+filter | false | nil | See below.
 
 The filter query parameter takes a JSON object with the following possible keys:
 
@@ -68,32 +38,9 @@ key | Default | Description
 --------- | ------- | -----------
 provider_type | nil | The Provider Type to limit results to. Can be either "practitioner", or "healthresource"
 
-## Get a Specific Schedule
-
-```ruby
-require 'inquicker'
-
-api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.schedules.get('2528d709-5ab9-444e-bfec-0e1e9d4666a6')
-```
-
-```python
-import inquicker
-
-api = inquicker.authorize('this-is-your-api-key')
-api.schedules.get('2528d709-5ab9-444e-bfec-0e1e9d4666a6')
-```
-
 ```shell
-curl "http://example.com/api/v3/my-host.inquicker.com/schedules/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
   -H "Authorization: this-is-your-api-key"
-```
-
-```javascript
-const inquicker = require('inquicker');
-
-let api = inquicker.authorize('this-is-your-api-key');
-let max = api.schedules.get('2528d709-5ab9-444e-bfec-0e1e9d4666a6');
 ```
 
 > The above command returns JSON structured like this:
@@ -115,15 +62,10 @@ let max = api.schedules.get('2528d709-5ab9-444e-bfec-0e1e9d4666a6');
 }
 ```
 
-This endpoint retrieves a specific schedule. This call is useful for getting certain attributes associated with a schedule (for example, if a provider only sees patients younger than 18, or the service associated with the schedule).
+### GET /schedules/{schedule_id}
 
-### HTTP Request
-
-`GET http://example.com/api/v3/{hostname}/schedules/{schedule_id}`
-
-### URL Parameters
+Retrieve a specific schedule. This call is useful for getting certain attributes associated with a schedule (for example, if a provider only sees patients younger than 18, or the service associated with the schedule).
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all schedules for that subdomain.
 schedule_id | true | nil | The unique identifier for the schedule to retrieve.

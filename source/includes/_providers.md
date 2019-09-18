@@ -1,31 +1,8 @@
-# Providers
-
-## Get All Providers
-
-```ruby
-require 'inquicker'
-
-api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.providers.get
-```
-
-```python
-import inquicker
-
-api = inquicker.authorize('this-is-your-api-key')
-api.providers.get()
-```
+## Providers
 
 ```shell
-curl "http://example.com/api/v3/my-host.inquicker.com/providers"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers"
   -H "Authorization: this-is-your-api-key"
-```
-
-```javascript
-const inquicker = require('inquicker');
-
-let api = inquicker.authorize('this-is-your-api-key');
-let providers = api.providers.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -43,44 +20,17 @@ let providers = api.providers.get();
 ]
 ```
 
-This endpoint retrieves all appointment types for a given Partner.
+### GET /providers
 
-### HTTP Request
-
-`GET http://example.com/api/v3/{hostname}/providers`
-
-### Query Parameters
+Retrieve all appointment types for a given Partner.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all providers for that subdomain.
 
-## Get a Specific Appointment Type
-
-```ruby
-require 'inquicker'
-
-api = InQuicker::APIClient.authorize!('this-is-your-api-key')
-api.providers.get('miss-kent-cormier')
-```
-
-```python
-import inquicker
-
-api = inquicker.authorize('this-is-your-api-key')
-api.providers.get('miss-kent-cormier')
-```
-
 ```shell
-curl "http://example.com/api/v3/my-host.inquicker.com/providers/{provider_id}"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers/{provider_id}"
   -H "Authorization: this-is-your-api-key"
-```
-
-```javascript
-const inquicker = require('inquicker');
-
-let api = inquicker.authorize('this-is-your-api-key');
-let max = api.providers.get('miss-kent-cormier');
 ```
 
 > The above command returns JSON structured like this:
@@ -109,13 +59,9 @@ let max = api.providers.get('miss-kent-cormier');
 }
 ```
 
-This endpoint retrieves a specific appointment type. This call is useful for getting certain attributes associated with a provider.
+### GET /providers/{provider_id}
 
-### HTTP Request
-
-`GET http://example.com/api/v3/{hostname}/providers/{provider_id}`
-
-### URL Parameters
+Retrieve a specific appointment type. This call is useful for getting certain attributes associated with a provider.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
