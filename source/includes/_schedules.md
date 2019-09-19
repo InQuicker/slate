@@ -26,17 +26,17 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules"
 
 ### GET /schedules
 
-Retrieve all schedules for a given Partner.
+Retrieve all schedules for a given Health System.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-filter | false | nil | See below.
+filter | false | null | See below.
 
 The filter query parameter takes a JSON object with the following possible keys:
 
 key | Default | Description
 --------- | ------- | -----------
-provider_type | nil | The Provider Type to limit results to. Can be either "practitioner", or "healthresource"
+provider_type | null | The Provider Type to limit results to. Can be either "practitioner", or "healthresource"
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
@@ -68,4 +68,4 @@ Retrieve a specific schedule. This call is useful for getting certain attributes
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-schedule_id | true | nil | The unique identifier for the schedule to retrieve.
+schedule_id | true | null | The unique identifier for the schedule to retrieve.

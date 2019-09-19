@@ -1,5 +1,11 @@
 ## Insurance Plans
 
+Insurance plans are used to determine whether a patient's health insurance is accepted by a particular schedule.
+
+Each plan belongs to an insurance company, and insurance companies can have many plans. Every health system has its own unique list of insurance companies and plans.
+
+Each schedule, facility, region, and health system can specify which insurance plans are accepted for a particular service. If the accepted insurance plans are specified for a schedule, that will override the facility's accepted insurance plans, which overrides the region's accepted insurance plans, which overrides the health system's accepted insurance plans.
+
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plans"
   -H "Authorization: this-is-your-api-key"
@@ -22,10 +28,10 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plan
 
 ### GET /insurance_plans
 
-Retrieve all insurance plans for a given Partner.
+Retrieve all insurance plans associated with active schedules for a given Health System.
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plans/{insurance_plan_id}"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plans/ultra-premium-plan"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -42,11 +48,10 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plan
 }
 ```
 
-### GET /insurance_plans/{insurance_plan_id}`
+### GET /insurance_plans/{id}
 
 Retrieve a specific insurance plan.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all insurance plans for that subdomain.
-insurance_plan_id | true | nil | The unique identifier for the insurance plan to retrieve.
+id | true | null | The unique identifier for the insurance plan to retrieve.

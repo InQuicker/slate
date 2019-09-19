@@ -1,5 +1,7 @@
 ## Health Systems
 
+Health Systems are the top level data type that connects all resources available to a partner.
+
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems"
   -H "Authorization: this-is-your-api-key"
@@ -10,29 +12,26 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems
 ```json
 [
   {
-    "id": "north-dewaynechester",
+    "id": "1",
     "type": "health_systems",
     "attributes": {
-      "address": "101 Some Street",
-      "city": "Portland",
-      "facility-name": "Sample Facility 2",
-      "latitude": 36.1659,
-      "longitude": -86.7844,
-      "name": "North Dewaynechester",
-      "phone": "12223332323",
-      "state": "Oregon",
-      "zip": "47495"
+      "name": "Winter Health",
+      "use-gtm-container": true,
+      "disable-google-indexing": false,
+      "gtm-container": null,
+      "gtag-conversion-event-id": "1234567890",
+      "gtag-id": "1123456-71"
     }
   }
 ]
 ```
 ### GET /health_systems
 
-This endpoint retrieves all health systems for a given Partner.
+This endpoint retrieves all available health systems for a Partner.
 
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems/{health_system_id}"
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems/north-dewaynechester"
   -H "Authorization: this-is-your-api-key"
 ```
 
@@ -40,26 +39,23 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems
 
 ```json
 {
-  "id": "feestport",
+  "id": "1",
   "type": "health_systems",
   "attributes": {
-    "address": "101 Some Street",
-    "city": "Portland",
-    "facility-name": "Sample Facility 4",
-    "latitude": 36.1659,
-    "longitude": -86.7844,
-    "name": "Feestport",
-    "phone": "12223332323",
-    "state": "Oregon",
-    "zip": "57616"
+    "name": "Winter Health",
+    "use-gtm-container": true,
+    "disable-google-indexing": false,
+    "gtm-container": null,
+    "gtag-conversion-event-id": "1234567890",
+    "gtag-id": "1123456-71"
   }
 }
 ```
 
 ### GET /health_systems/{health_system_id}
 
-This endpoint retrieves a specific health system. This call is useful for getting certain attributes associated with a health system (for example, if a provider only sees patients younger than 18, or the service associated with the health system).
+This endpoint retrieves a specific health system. This call is useful for getting the Google Tag Manager settings for the health system.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-health_system_id | true | nil | The unique identifier for the health system to retrieve.
+health_system_id | true | null | The unique identifier for the health system to retrieve.

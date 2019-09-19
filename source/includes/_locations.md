@@ -29,11 +29,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations"
 
 ### GET /locations
 
-Retrieve all locations for a given Partner.
-
-Parameter | Required | Default | Description
---------- | -------- | ------- | -----------
-hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all locations for that subdomain.
+Retrieve all locations for a given Health System.
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport"
@@ -67,5 +63,4 @@ Retrieve a specific location.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
-hostname | true | nil | The hostname of the Partner aka. the InQuicker subdomain. Required to fetch all locations for that subdomain.
-location_id | true | nil | The unique identifier for the location to retrieve.
+location_id | true | null | The unique identifier for the location to retrieve.

@@ -6,6 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://docs.inquicker.com/api/v2/'>APIv2 Documentation</a>
 
 includes:
   - appointment_types
