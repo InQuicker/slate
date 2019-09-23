@@ -13,8 +13,10 @@ includes:
   - health_systems
   - insurance_plans
   - locations
+  - medical_groups
   - providers
   - schedules
+  - services
   - errors
 
 search: true
