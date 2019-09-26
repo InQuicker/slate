@@ -1,5 +1,7 @@
 ## Schedules
 
+Schedules can be queried from the `/schedules` endpoint, or from the [`locations`](#locations) endpoint for schedules at a specific location.
+
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules"
   -H "Authorization: this-is-your-api-key"

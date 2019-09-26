@@ -6,6 +6,8 @@ Each plan belongs to an insurance company, and insurance companies can have many
 
 Each schedule, facility, region, and health system can specify which insurance plans are accepted for a particular service. If the accepted insurance plans are specified for a schedule, that will override the facility's accepted insurance plans, which overrides the region's accepted insurance plans, which overrides the health system's accepted insurance plans.
 
+To get insurance plans available for a schedule, use the [Schedules](#schedules) endpoint.
+
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plans"
   -H "Authorization: this-is-your-api-key"
