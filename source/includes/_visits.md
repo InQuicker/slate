@@ -202,3 +202,22 @@ url | string | https://example.com/?utm_medium=search&utm_source=Google&utm_camp
 user-agent | string | Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405 | User agent of the user who booked the appointment
 weeks-pregnant | number | 0 | Number of weeks pregnant
 zip | string | 12345 | Patient's zip code
+
+The `relationships` parameter provides the schedule to book into.
+
+Attribute | Type | Example | Description
+--------- | ---- | ------- | -----------
+schedule  | object | See below | The schedule that the appointment being booked belongs to.
+
+The schedule relationship object follows the JSON API format for relationships, for example:
+
+```json
+{
+  "schedule": {
+    "data": {
+      "id": "2528d709-5ab9-444e-bfec-0e1e9d4666a6",
+      "type": "schedules"
+    }
+  }
+}
+```

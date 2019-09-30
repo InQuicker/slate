@@ -17,6 +17,7 @@ includes:
   - providers
   - schedules
   - services
+  - visit_settings
   - visits
   - errors
 
@@ -27,7 +28,7 @@ search: true
 
 This is the reference documentation for the InQuicker API. You can use our API to enable patient scheduling in your business or application.
 
-The InQuicker API follows the JSON API Specification
+The InQuicker API follows the [JSON:API](https://jsonapi.org/) Specification. See their site to get started with JSON:API.
 
 # Document Conventions.
 
