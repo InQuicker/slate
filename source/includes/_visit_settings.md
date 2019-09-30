@@ -17,6 +17,47 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visit-settings
 -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "type": "validation",
+      "attributes": {
+        "kind": "birthdate",
+        "attributes": ["birthdate"]
+      }
+    },
+    {
+      "type": "enabled-fields",
+      "attributes": {
+        "fields": ["birthdate", "caregiver-name", "email", "first-name", "gender", "has-physician", "last-name", "middle-initial", "new-patient", "patient-complaint", "phone-number", "pregnant", "terms-tos", "weeks-pregnant", "zip"]
+      }
+    },
+    {
+      "type": "patient-instructions",
+      "attributes": {
+        "text": "Do not drink for 2 hours prior to your appointment."
+      }
+    },
+    {
+      "type": "preregistration-form",
+      "attributes": {
+        "url": "https://winterhealth.com/reg.pdf"
+      }
+    },
+    {
+      "type": "screening-questions",
+      "attributes": {
+        "url": "https://winterhealth.com/questions.pdf"
+      }
+    }
+  ]
+}
+
+```
+
 ### GET /visit-settings/{schedule_id}
 
 Retrieve field validations, enabled fields, screening questions, patient
@@ -37,6 +78,8 @@ Visit creation should always check for errors.
 </aside>
 
 The following validations are reported with this endpoint:
+
+<div style="clear:right"></div>
 
 ```json
 {
