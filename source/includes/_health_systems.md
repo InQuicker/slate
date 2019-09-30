@@ -4,7 +4,7 @@ Health Systems are the top level data type that connects all resources available
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -32,7 +32,7 @@ This endpoint retrieves all available health systems for a Partner.
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems/north-dewaynechester"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:

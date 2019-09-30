@@ -2,7 +2,7 @@
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -59,7 +59,7 @@ provider-type | null | Limit to either practitioners or health resources. Can be
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers/miss-kent-cormier"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:

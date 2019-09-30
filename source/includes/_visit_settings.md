@@ -1,9 +1,9 @@
 ## Visit Settings
 
-Settings within InQuicker have many effects on the visit scheduling process.
-The Visit Settings endpoint exports many of these settings allowing Partners to
-build forms having feature parity with InQuicker's own. The Visit Settings endpoint
-returns settings for a specific schedule.
+Settings within InQuicker have many effects on the visit scheduling process. The
+Visit Settings endpoint exports many of these settings allowing Partners to
+build forms having feature parity with InQuicker's own. The Visit Settings
+endpoint returns settings for a specific schedule.
 
 The following visit settings are exported using this endpoint:
 
@@ -12,13 +12,23 @@ The following visit settings are exported using this endpoint:
   - Patient Instructions
   - Pre-registration Forms
 
+```shell
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visit-settings/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
+-H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
+```
+
+### GET /visit-settings/{schedule_id}
+
+Retrieve field validations, enabled fields, screening questions, patient
+instructions, and pre-registration forms, if any, for the given schedule.
+
 #### Validations
 
 Validations describe how some fields will be validated by the server when
-attempting to create a visit object. The Validation details can be used to create
-client side validation routines which match the InQuicker server. One benefit of
-using this API is that custom validations can be added on the client side regardless
-of the InQuicker setup.
+attempting to create a visit object. The Validation details can be used to
+create client side validation routines which match the InQuicker server. One
+benefit of using this API is that custom validations can be added on the client
+side regardless of the InQuicker setup.
 
 <aside class="notice">
 Not all validations used on the server are reported using this interface. For

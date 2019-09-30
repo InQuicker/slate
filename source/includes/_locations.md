@@ -4,7 +4,7 @@ Locations, also called Facilities, correspond to the physical locations where se
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -33,7 +33,7 @@ Retrieve all locations for a given Health System, and links to all related activ
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -67,7 +67,7 @@ location_id | true | null | The unique identifier for the location to retrieve.
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport/schedules"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:

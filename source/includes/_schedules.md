@@ -4,7 +4,7 @@ Schedules can be queried from the `/schedules` endpoint, or from the [`locations
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -42,7 +42,7 @@ provider_type | null | The Provider Type to limit results to. Can be either "pra
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:

@@ -10,7 +10,7 @@ To get insurance plans available for a schedule, use the [Schedules](#schedules)
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plans"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -34,7 +34,7 @@ Retrieve all insurance plans associated with active schedules for a given Health
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/insurance_plans/ultra-premium-plan"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:

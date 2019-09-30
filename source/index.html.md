@@ -30,7 +30,7 @@ This is the reference documentation for the InQuicker API. You can use our API t
 
 The InQuicker API follows the [JSON:API](https://jsonapi.org/) Specification. See their site to get started with JSON:API.
 
-# Document Conventions.
+# Document Conventions
 
 # Making Requests
 

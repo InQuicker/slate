@@ -2,7 +2,7 @@
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_types"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -37,7 +37,7 @@ service | null | The name of the Service to limit results from, for example, "Pr
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_types/checkup"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:

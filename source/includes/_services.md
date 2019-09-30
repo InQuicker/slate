@@ -2,7 +2,7 @@
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/services"
-  -H "Authorization: this-is-your-api-key"
+  -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
@@ -25,7 +25,7 @@ Retrieve all services for a given Health System.
 
 ```shell
 curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/services/family-medicine"
--H "Authorization: this-is-your-api-key"
+-H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
 > The above command returns JSON structured like this:
