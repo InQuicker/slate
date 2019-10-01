@@ -7,7 +7,7 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
 a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+  https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
@@ -66,7 +66,7 @@ under the License.
 
       key = decodeURIComponent(key);
       // missing `=` should be `null`:
-      // http://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
+      // https://w3.org/TR/2012/WD-url-20120524/#collect-url-parameters
       val = val === undefined ? null : decodeURIComponent(val);
 
       if (!ret.hasOwnProperty(key)) {

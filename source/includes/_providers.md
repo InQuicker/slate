@@ -1,7 +1,7 @@
 ## Providers
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/providers"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -33,7 +33,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers"
 ]
 ```
 
-### GET /providers
+### `GET /providers`
 
 Retrieve all providers for a given Health System.
 
@@ -58,7 +58,7 @@ near | null | Orders results from nearest to farthest given geographic coordinat
 provider-type | null | Limit to either practitioners or health resources. Can be either 'practitioner' or 'healthresource'.
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers/miss-kent-cormier"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/providers/miss-kent-cormier"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -88,9 +88,10 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/providers/miss
 }
 ```
 
-### GET /providers/{provider_id}
+### `GET /providers/{provider_id}`
 
-Retrieve a specific provider. This call is useful for getting certain attributes associated with a provider.
+Retrieve a specific provider. This call is useful for getting certain attributes
+associated with a provider.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------

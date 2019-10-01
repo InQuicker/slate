@@ -1,9 +1,10 @@
 ## Health Systems
 
-Health Systems are the top level data type that connects all resources available to a partner.
+Health Systems are the top level data type that connects all resources available
+to a partner.
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -25,13 +26,13 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems
   }
 ]
 ```
-### GET /health_systems
+### `GET /health_systems`
 
 This endpoint retrieves all available health systems for a Partner.
 
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems/north-dewaynechester"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems/north-dewaynechester"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -52,9 +53,10 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/health_systems
 }
 ```
 
-### GET /health_systems/{health_system_id}
+### `GET /health_systems/{health_system_id}`
 
-This endpoint retrieves a specific health system. This call is useful for getting the Google Tag Manager settings for the health system.
+This endpoint retrieves a specific health system. This call is useful for
+getting the Google Tag Manager settings for the health system.
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------

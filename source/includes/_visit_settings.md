@@ -13,7 +13,7 @@ The following visit settings are exported using this endpoint:
   - Pre-registration Forms
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visit-settings/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/visit-settings/2528d709-5ab9-444e-bfec-0e1e9d4666a6"
 -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -58,7 +58,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visit-settings
 
 ```
 
-### GET /visit-settings/{schedule_id}
+### `GET /visit-settings/{schedule_id}`
 
 Retrieve field validations, enabled fields, screening questions, patient
 instructions, and pre-registration forms, if any, for the given schedule.

@@ -124,7 +124,7 @@ weeks-pregnant               | Number of weeks pregnant                         
 zip                          | Patient's zip code                                                 | String   | Required if visit.full_address is set to required
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visits"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/visits"
   -H "Authorization: jwt-token-from-visit-token-endpoint" -H "ACCEPT: application/vnd.api+json" --data-urlencode data='{"attributes": {"appointment-at": "2018-06-11T19:20:00-07:00", ...}, "relationships": {"schedule": {"data": {"id": "2528d709-5ab9-444e-bfec-0e1e9d4666a6", "type": "schedules"}}}}'
 ```
 
@@ -134,7 +134,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visits"
     "id": "d8fc721b6c26a40658ce1b884109bf41",
     "type": "visits",
     "links": {
-      "self": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41"
+      "self": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41"
     },
     "attributes": {
       "appointment-at": "2018-06-11T20:20:00.000-06:00",
@@ -146,20 +146,20 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visits"
     "relationships": {
       "schedule": {
         "links": {
-          "self": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/relationships/schedule",
-          "related": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/schedule"
+          "self": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/relationships/schedule",
+          "related": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/schedule"
         }
       },
       "location": {
         "links": {
-          "self": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/relationships/location",
-          "related": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/location"
+          "self": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/relationships/location",
+          "related": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/location"
         }
       },
       "provider": {
         "links": {
-          "self": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/relationships/provider",
-          "related": "http://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/provider"
+          "self": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/relationships/provider",
+          "related": "https://api.inquicker.com/v3/winter_health.inquickerhost.com/visits/d8fc721b6c26a40658ce1b884109bf41/provider"
         }
       }
     }
@@ -167,7 +167,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visits"
 }
 ```
 
-### POST /visits
+### `POST /visits`
 
 The visits resource is a POST only endpoint which allows partners to create
 visits. Visit resources cannot be queried in any way and the visit resource will

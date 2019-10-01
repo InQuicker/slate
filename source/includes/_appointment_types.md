@@ -1,7 +1,7 @@
 ## Appointment Types
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_types"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_types"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -20,7 +20,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_ty
 ]
 ```
 
-### GET /appointment_types
+### `GET /appointment_types`
 
 Retrieve all appointment types for a given Health System.
 
@@ -36,7 +36,7 @@ context | null | The Schedule Context to limit results from. Can be either "Pati
 service | null | The name of the Service to limit results from, for example, "Primary Care".
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_types/checkup"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_types/checkup"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -53,7 +53,7 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/appointment_ty
 }
 ```
 
-### GET /appointment_types/{appointment_type_id}
+### `GET /appointment_types/{appointment_type_id}`
 
 Retrieve a specific appointment type. The priority of an appointment type determines which appointment type is selected by default for new visits and provider links, with 1 being the highest priority, and 10 being the lowest.
 

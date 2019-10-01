@@ -1,9 +1,11 @@
 ## Locations
 
-Locations, also called Facilities, correspond to the physical locations where services are provided. Locations have one or more related [Schedules](#schedules).
+Locations, also called Facilities, correspond to the physical locations where
+services are provided. Locations have one or more related
+[Schedules](#schedules).
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/locations"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -27,12 +29,13 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations"
 }]
 ```
 
-### GET /locations
+### `GET /locations`
 
-Retrieve all locations for a given Health System, and links to all related active [schedules](#schedules).
+Retrieve all locations for a given Health System, and links to all related
+active [schedules](#schedules).
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -56,9 +59,10 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/fees
 }
 ```
 
-### GET /locations/{location_id}
+### `GET /locations/{location_id}`
 
-Retrieve a specific location, along with links to related [schedules](#schedules).
+Retrieve a specific location, along with links to related
+[schedules](#schedules).
 
 
 Parameter | Required | Default | Description
@@ -66,7 +70,7 @@ Parameter | Required | Default | Description
 location_id | true | null | The unique identifier for the location to retrieve.
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport/schedules"
+curl "https://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/feestport/schedules"
   -H "Authorization: this-is-your-api-key" -H "ACCEPT: application/vnd.api+json"
 ```
 
@@ -91,6 +95,8 @@ curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/locations/fees
 ...
 ```
 
-### GET /locations/{location_id}/schedules
+### `GET /locations/{location_id}/schedules`
 
-Retrieve active schedules for a location. This endpoint returns links to the [provider](#providers), [service](#services), and [insurance plans](#insurance-plans) for each schedule returned.
+Retrieve active schedules for a location. This endpoint returns links to the
+[provider](#providers), [service](#services), and [insurance
+plans](#insurance-plans) for each schedule returned.
