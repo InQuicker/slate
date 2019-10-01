@@ -43,39 +43,45 @@ Health systems can access this feature by coordinating with their InQuicker
 Implementation Manager (IM).
 
 <aside class="notice">
-The feature.api.v3_visit_create setting must be enabled at the Health System level
-within the InQuicker console.*
+The feature.api.v3_visit_create setting must be enabled at the Health System
+level within the InQuicker console.*
 </aside>
+
+### Authorization
+
+This endpoint uses a JWT token from the [`/visit-token`](#visit-token) endpoint
+instead of the API key. This token is limited to the time slot that it is
+created for, and expires in 30 minutes.
 
 ### Usage Notes
 
 - Although screening questions can be used to prevent a patient from scheduling
-online, answers cannot be sent through the Visit Creation call.
-- Since InQuicker's forms are bypassed, the Partner is responsible for doing
-their own validations as well as creating and linking their own "Terms of Service"
-form.
-- Although the Terms of Service (terms-tos) and Terms 911 (terms-911) fields may be
-returned as required when querying Visit Settings, they *must not* be passed when
-creating a visit. It is included to remind the Partner of it's requirement.
-- When setting up a schedule in InQuicker (to be used by API V3), do not require any
-visit fields that are not supported by API V3.
-- Before using API V3 for a schedule, make sure the schedule does not require any visit
-fields that are not supported by the API. Doing so will cause validation to fail if the
-field is not submitted, but if included, will trigger an error.
-- A schedule can be configured within InQuicker to use keyword filtering to prevent a
-visit from being created. For example, if the patient complaint contains "shortness of
-breath," the InQuicker scheduling page would prevent the patient from scheduling and
-would direct the patient to page about when to call 911. When using API V3 for visit
-creation the Partner is now responsible for such rules.
-- If using the translator language field (translator-language), the list of available
-languages for the schedule can be retrieved using the [Schedules endpoint](#schedules). The API won't validate this
-field, so the Partner is responsible for doing this if desired.
+  online, answers cannot be sent through the Visit Creation call. Since
+  InQuicker's forms are bypassed, the Partner is responsible for doing their own
+  validations as well as creating and linking their own "Terms of Service" form.
+  Although the Terms of Service (terms-tos) and Terms 911 (terms-911) fields may
+  be returned as required when querying Visit Settings, they *must not* be
+  passed when creating a visit. It is included to remind the Partner of it's
+  requirement. When setting up a schedule in InQuicker (to be used by API V3),
+  do not require any visit fields that are not supported by API V3. Before using
+  API V3 for a schedule, make sure the schedule does not require any visit
+  fields that are not supported by the API. Doing so will cause validation to
+  fail if the field is not submitted, but if included, will trigger an error. A
+  schedule can be configured within InQuicker to use keyword filtering to
+  prevent a visit from being created. For example, if the patient complaint
+  contains "shortness of breath," the InQuicker scheduling page would prevent
+  the patient from scheduling and would direct the patient to page about when to
+  call 911. When using API V3 for visit creation the Partner is now responsible
+  for such rules. If using the translator language field (translator-language),
+  the list of available languages for the schedule can be retrieved using the
+  [Schedules endpoint](#schedules). The API won't validate this field, so the
+  Partner is responsible for doing this if desired.
 
 ### Validations
 
-Field validations can be set up on the schedule level. However, some have behavior
-that cannot be changed. Please see the validation section in the Visit Settings
-call for more specific information.
+Field validations can be set up on the schedule level. However, some have
+behavior that cannot be changed. Please see the validation section in the Visit
+Settings call for more specific information.
 
 ### Attributes
 
@@ -118,8 +124,8 @@ weeks-pregnant               | Number of weeks pregnant                         
 zip                          | Patient's zip code                                                 | String   | Required if visit.full_address is set to required
 
 ```shell
-curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/schedules"
-  -H "Authorization: this-is-your-api-key" --data-urlencode data='{"attributes": {"appointment-at": "2018-06-11T19:20:00-07:00", ...}, "relationships": {"schedule": {"data": {"id": "2528d709-5ab9-444e-bfec-0e1e9d4666a6", "type": "schedules"}}}}'
+curl "http://api.inquicker.com/api/v3/winter-health.inquicker.com/visits"
+  -H "Authorization: jwt-token-from-visit-token-endpoint" -H "ACCEPT: application/vnd.api+json" --data-urlencode data='{"attributes": {"appointment-at": "2018-06-11T19:20:00-07:00", ...}, "relationships": {"schedule": {"data": {"id": "2528d709-5ab9-444e-bfec-0e1e9d4666a6", "type": "schedules"}}}}'
 ```
 
 ```json
@@ -209,7 +215,8 @@ Attribute | Type | Example | Description
 --------- | ---- | ------- | -----------
 schedule  | object | See below | The schedule that the appointment being booked belongs to.
 
-The schedule relationship object follows the JSON API format for relationships, for example:
+The schedule relationship object follows the JSON:API format for relationships,
+for example:
 
 ```json
 {

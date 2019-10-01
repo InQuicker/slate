@@ -18,6 +18,7 @@ includes:
   - schedules
   - services
   - visit_settings
+  - visit_token
   - visits
   - errors
 
