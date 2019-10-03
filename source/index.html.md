@@ -9,17 +9,18 @@ toc_footers:
   - <a href='https://docs.inquicker.com/api/v2/'>APIv2 Documentation</a>
 
 includes:
-  - appointment_types
-  - health_systems
-  - insurance_plans
-  - locations
-  - medical_groups
-  - providers
-  - schedules
-  - services
-  - visit_settings
-  - visit_token
-  - visits
+  - resources
+  - resources/appointment_types
+  - resources/health_systems
+  - resources/insurance_plans
+  - resources/locations
+  - resources/medical_groups
+  - resources/providers
+  - resources/schedules
+  - resources/services
+  - resources/visit_settings
+  - resources/visit_token
+  - resources/visits
   - errors
 
 search: true
@@ -82,8 +83,3 @@ The one exception for this rule is for the [`POST /visits`](#post-visits) endpoi
 <aside class="notice">
 You must replace <code>this-is-your-api-key</code> with your personal API key.
 </aside>
-
-# Resources
-
-The code samples use the "Winter Health" health system for demonstration
-purposes.
